@@ -1,0 +1,22 @@
+<html>
+    <body>
+        {% include "superior/barra.html" %}
+    <h2 style= "color: red">
+    Hola gente estamos viendo nuestra primera plantilla
+    </h2>
+    <p>El nombre del autor es: {{nombre_persona}} {{apellido_persona}}</p>
+    <p>Estamos viendo el tema de las plantillas a d&iacute;a: {{momento_actual.day}} / {{momento_actual.month}} / {{momento_actual.year}}</p>
+    <p><strong>Temas del curso:</strong></p>
+    <p>
+        <ul>
+        {% if temas %}
+            {% for elTema in temas %}
+                <li>{{elTema|first|lower}}</li>        
+            {% endfor %}
+        {% else %}
+            <p>No hay elementos que mostrar</p>
+        {% endif %}
+        </ul>
+    </p>
+    </body>
+</html>
